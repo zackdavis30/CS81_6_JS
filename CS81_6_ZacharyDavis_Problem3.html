@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Problem 3</title>
+</head>
+<body>
+	<script type="text/javascript">
+	
+	function checkGivenProperty(firstName, lastName, state, zip ){
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.state = state;
+		this.zip = "empty";
+
+	}	
+
+checkGivenProperty.prototype.age = 30;
+
+	
+var zack = new checkGivenProperty("Zack", "Davis", "CA", "90291");
+
+
+// checking the propertty 
+console.log(zack.hasOwnProperty("firstName"));
+console.log(zack.hasOwnProperty("lastName"));
+console.log(zack.hasOwnProperty("state"));
+console.log(zack.hasOwnProperty("zip"));
+console.log(zack.hasOwnProperty("age"));
+// extra to show there is a value attached to .age
+console.log(zack.age);
+
+
+
+
+	</script>
+
+</body>
+</html>

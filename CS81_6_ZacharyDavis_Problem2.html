@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Problem 2</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+// prompt to ask if you like to add or subtract any money		
+var ammountToAdd = prompt("How much do you want to deposit?");
+var ammountToWithdraw = prompt("Will you like to withdraw any money?");
+		
+function BankAcct (acctNum, acctOwner, acctBalance, acctType){
+	this.acctNum = acctNum;
+	this.acctOwner = acctOwner;
+	this.acctBalance = acctBalance;
+	this.acctType = acctType;
+}
+
+BankAcct.prototype.acctBalance = this.acctBalance;
+
+BankAcct.prototype.checkTransfer = function(newamount, withdraw) {
+	// body...
+	this.newamount = parseFloat(ammountToAdd); // adding money to your account
+	this.withdraw = parseFloat(ammountToWithdraw); // subtracting money from your account
+	
+	if(this.acctBalance > 0){
+		this.acctBalance = this.newamount + this.acctBalance;
+		this.acctBalance = this.acctBalance - this.withdraw;
+		if(this.acctBalance < 0){
+			
+			console.log("You currently owe Money");
+		}
+		
+		return "$" + this.acctBalance + " in your " + this.acctType + " account"
+	} else {
+		return "$" + this.acctBalance + " in your " + this.acctType + " account"
+		console.log("You have Zero in your bank account");
+	} 
+		
+
+};
+
+var zackAcct = new BankAcct ("123456", "Zack", 400.00, "Checking");
+
+console.log(zackAcct.checkTransfer());
+
+
+
+	</script>
+
+</body>
+</html>
